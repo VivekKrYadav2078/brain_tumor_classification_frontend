@@ -4,7 +4,7 @@ import { Upload, Brain, Activity, AlertCircle, CheckCircle, X, Thermometer } fro
 
 export default function BrainTumorDetector() {
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
-  const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const [previewImage, setPreviewImage] = useState<string | undefined>(undefined);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [result, setResult] = useState<{
     predicted_class: string;
@@ -121,7 +121,7 @@ export default function BrainTumorDetector() {
             <div className="mt-6 space-y-3">
               <div className="relative rounded-lg overflow-hidden border border-purple-500/30">
                 <img 
-                  src={previewImage || ''} 
+                  src={previewImage || undefined} 
                   alt="Uploaded MRI" 
                   className="w-full h-48 object-cover"
                 />
@@ -189,7 +189,7 @@ export default function BrainTumorDetector() {
           {selectedImage && !result && !isAnalyzing && (
             <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl border border-purple-500/20 p-8 text-center">
               <img 
-                src={previewImage || null} 
+                src={previewImage || undefined} 
                 alt="MRI Preview" 
                 className="max-w-md mx-auto rounded-lg border-2 border-purple-500/30 mb-6"
               />
@@ -252,7 +252,7 @@ export default function BrainTumorDetector() {
                     <p className="text-sm text-purple-300 mb-3 font-medium">Original MRI Scan</p>
                     <div className="rounded-lg overflow-hidden border-2 border-purple-500/30">
                       <img 
-                        src={previewImage || null} 
+                        src={previewImage || undefined} 
                         alt="Original MRI" 
                         className="w-full h-auto"
                       />
