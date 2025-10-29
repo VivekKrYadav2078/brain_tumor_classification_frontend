@@ -42,7 +42,7 @@ export default function BrainTumorDetector() {
       formData.append("file", selectedImage);
 // https://unseconded-mirna-demiurgically.ngrok-free.dev
 // http://localhost:8000/predict
-      const response = await fetch("https://unseconded-mirna-demiurgically.ngrok-free.dev", {
+      const response = await fetch("https://unseconded-mirna-demiurgically.ngrok-free.dev/predict", {
         method: "POST",
         body: formData,
       });
