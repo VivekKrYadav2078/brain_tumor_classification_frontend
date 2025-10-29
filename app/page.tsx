@@ -40,8 +40,9 @@ export default function BrainTumorDetector() {
     try {
       const formData = new FormData();
       formData.append("file", selectedImage);
-
-      const response = await fetch("http://localhost:8000/predict", {
+// https://unseconded-mirna-demiurgically.ngrok-free.dev
+// http://localhost:8000/predict
+      const response = await fetch("https://unseconded-mirna-demiurgically.ngrok-free.dev", {
         method: "POST",
         body: formData,
       });
@@ -85,8 +86,8 @@ export default function BrainTumorDetector() {
               <Brain className="w-8 h-8 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-white">NeuroScan AI</h1>
-              <p className="text-xs text-purple-300">Tumor Detection System</p>
+              <h1 className="text-xl font-bold text-white">BrainSight AI</h1>
+              <p className="text-xs text-purple-300">Brain Tumor Detection System</p>
             </div>
           </div>
         </div>
@@ -232,10 +233,14 @@ export default function BrainTumorDetector() {
                     <p className="text-2xl font-bold text-white"><strong>Confidence:</strong> {(result.confidence * 100).toFixed(2)}%</p>
                   </div>
                 </div>
+                {/*  
                 <div className="mt-6 bg-slate-900/50 rounded-xl p-6 border border-purple-500/20">
                   <p className="text-sm text-purple-300 mb-2">Analysis Details</p>
-                  {/* <p className="text-white">{result.details}</p> */}
-                </div>
+                  
+                
+                
+                */}
+                
               </div>
               {/* Heatmap Visualization */}
               <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl border border-purple-500/20 p-8">
